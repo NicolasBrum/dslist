@@ -14,25 +14,31 @@ public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String title;
+
     @Column(name = "game_year")
     private Integer year;
     private String genre;
-    private String plataforms;
+    private String platforms;
     private Double score;
     private String imgUrl;
+
+    @Column(columnDefinition = "TEXT") //Declara que a definição no banco não vai ser varchar e sim TEXT
     private String shortDescription;
+
+    @Column(columnDefinition = "TEXT")
     private String longDescription;
 
     public Game() {}
 
-    public Game(Long id, String title, Integer year, String genre, String plataforms, Double score, String imgUrl,
+    public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
                 String longDescription, String shortDescription) {
         this.id = id;
         this.title = title;
         this.year = year;
         this.genre = genre;
-        this.plataforms = plataforms;
+        this.platforms = platforms;
         this.score = score;
         this.imgUrl = imgUrl;
         this.longDescription = longDescription;
