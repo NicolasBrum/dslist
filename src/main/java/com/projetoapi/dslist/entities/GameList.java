@@ -1,8 +1,6 @@
 package com.projetoapi.dslist.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,15 +12,16 @@ import java.util.Objects;
 @Table(name = "tb_game_list")
 public class GameList {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
+    private String name;
 
     public GameList() {
     }
 
-    public GameList(Long id, String nome) {
+    public GameList(Long id, String name) {
         this.id = id;
-        this.nome = nome;
+        this.name = name;
     }
 
     @Override
