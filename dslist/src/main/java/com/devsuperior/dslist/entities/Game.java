@@ -24,8 +24,13 @@ public class Game {
     @Column(name = "game_year") //year é uma palavra reservada no postgres
     private Integer year;
     private String genre;
-    private String plataform;
+    private String platforms;
+    private Double score;
+    private String imgUrl;
+
+    @Column(columnDefinition = "TEXT") //Senao o JPA cria como varchar
     private String ShortDescription;
+    @Column(columnDefinition = "TEXT")
     private String LongDescription;
 
     @Override
